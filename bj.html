@@ -1,0 +1,55 @@
+<html >
+<head>
+	<link href="/php/Inc/bootstrap.min.css" rel="stylesheet">
+<meta charset=utf8>
+<style text/css>
+div{text-align: center;}	
+</style>
+<script src="Inc/qy.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	function check()
+		{
+			var f=document.f1;
+			upage=f.page.value;
+			
+			
+			if(!upage)
+			{
+				alert("您的用户名尚未填写哦");
+				return false;
+			}
+		
+	</script>	
+</head>
+<body>
+<div >
+	<ul class='pagination pagination-lg'>
+			<?php if ($page!=1) : ?>
+<li ><a href="http://localhost/php/bjsubmit.php/?page=<?php echo $page-1?>">上一页</a></li>
+            <?php endif ?> 
+
+            <?php  for ($i=1;$i<=$pages;$i++):?>
+<li><a href="http://localhost/php/bjsubmit.php/?page=<?php echo $i ?>"><?php echo $i ?></a></li>
+            <?php endfor?>
+            <?php if ($page!=$pages) : ?>	
+<li><a href="http://localhost/php/bjsubmit.php/?page=<?php echo $page+1?>">下一页</a></li>
+            <?php endif ?>
+</ul>
+
+
+
+<form name="f1" action="http://localhost/php/bjsubmit.php" method="GET"  
+onsubmit="return check()">
+<input type="text" name="page" value="" size="4" >
+<input type="submit" value=" 跳转" class="btn btn-danger btn-sm"/>	
+
+
+</form>	
+</div>
+
+</body>	
+
+	
+
+</html>
+
